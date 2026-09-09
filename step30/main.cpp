@@ -1,38 +1,26 @@
 #include <iostream>
-#include <memory>
 
-class DataSource {
+class CsvReader {
 public:
-    virtual void open() = 0;
-
-    virtual ~DataSource() = default;
-};
-
-class CsvDataSource final : public DataSource {
-public:
-    void open() final {
+    void read() {
         std::cout << "open csv\n";
     }
-
-~CsvDataSource() = default;
-
 };
 
-class SpecialDataSource : public CsvDataSource {
+
+class DataProcessor {
 public:
-    void open() override {
-        std::cout << "open special csv\n";
+    void process() {
+        reader_.read();
+        std::cout << "Data processed\n";
     }
-
+private:
+    CsvReader reader_;
 };
-
-
 
 int main() {
-    std::unique_ptr<DataSource> source = std::make_unique<CsvDataSource>();
-    source->open();
-
+    DataProcessor processor;
+    processor.process();
 
     return 0;
- 
 }
