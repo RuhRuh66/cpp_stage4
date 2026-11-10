@@ -1,0 +1,3 @@
+AdditionTest 6 0.000445083
+GoogleTestCheck 1 0.0053319
+---

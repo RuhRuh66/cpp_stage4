@@ -1,0 +1,45 @@
+Start testing: Oct 08 12:43 JST
+----------------------------------------------------------
+1/2 Testing: AdditionTest
+1/2 Test: AdditionTest
+Command: "/home/ruhruh66/cpp_stage4/step39/build/add_test"
+Directory: /home/ruhruh66/cpp_stage4/step39/build
+"AdditionTest" start time: Oct 08 12:43 JST
+Output:
+----------------------------------------------------------
+All tests passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"AdditionTest" end time: Oct 08 12:43 JST
+"AdditionTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: GoogleTestCheck
+2/2 Test: GoogleTestCheck
+Command: "/home/ruhruh66/cpp_stage4/step39/build/google_test"
+Directory: /home/ruhruh66/cpp_stage4/step39/build
+"GoogleTestCheck" start time: Oct 08 12:43 JST
+Output:
+----------------------------------------------------------
+Running main() from /home/ruhruh66/cpp_stage4/step39/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from AddTest
+[ RUN      ] AddTest.PositiveNumbers
+[       OK ] AddTest.PositiveNumbers (0 ms)
+[----------] 1 test from AddTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"GoogleTestCheck" end time: Oct 08 12:43 JST
+"GoogleTestCheck" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 08 12:43 JST

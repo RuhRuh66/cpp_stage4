@@ -1,0 +1,44 @@
+#include <iostream>
+#include <regex>
+#include <string>
+#include <vector>
+
+int main() {
+    std::vector<std::string> names {
+        " FEV1 ", "FEV 1 ", "Fev-1 ", "feb1 ", " FVC "
+    };
+    std::regex pattern(R"(fev[ -]?1)", std::regex::icase);
+    std::regex spaces(R"(^\s+|\s+$)");
+
+    for (const std::string& name: names) {
+        std::string trimmed = std::regex_replace(name, spaces, "");
+        if (std::regex_match(trimmed, pattern)){
+           std::string normalized = std::regex_replace(trimmed, pattern, "FEV1");
+           std::cout << trimmed << " -> " << normalized << '\n';
+        } else {
+            std::cout << trimmed << " -> no match\n";
+        }
+
+    }
+
+
+
+    std::string text = "fev1.0,fvc,";
+    std::istringstream stream(text);
+
+    std::vector<std::string> tokens;
+    std::string token;
+
+    while (std::getline(stream, token, ',')) {
+        std::string token_trimmed = std::regex_replace(token, spaces, "");
+        tokens.push_back(token_trimmed);
+    }
+    if (!text.empty() && text.back() == ','){
+        tokens.push_back("");
+    }
+
+   for (std::size_t i = 0; i < tokens.size(); ++i) {
+    std::cout << i << ": [" << tokens[i] << "]\n";
+   }
+}
+

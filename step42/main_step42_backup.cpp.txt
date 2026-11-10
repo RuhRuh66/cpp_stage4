@@ -1,0 +1,91 @@
+#include <iostream>
+#include <vector>
+#include <list>
+//#include <chrono>
+
+int main() {
+    std::vector<int> values{10, 20, 30, 40, 50};
+
+    for (std::size_t i=0; i < values.size(); ++i) {
+        std::cout << "value: " << values[i]
+                << " address: " << &values[i] << '\n';
+    }
+    std::cout << '\n';
+
+    std::list<int> numbers{10, 20, 30, 40, 50};
+
+    for (const int& value : numbers) {
+        std::cout << "value: " << value
+                << " address: " << &value << '\n';
+
+    }
+
+//     constexpr std::size_t N = 1000000;
+
+//     std::vector<int> large_vector(N, 1);
+//     std::list<int> large_list(N, 1);
+
+//     auto start = std::chrono::steady_clock::now();
+//     long long sum = 0;
+
+//     for (int value : large_vector) {
+//         sum += value;
+//     }
+//     auto end = std::chrono::steady_clock::now();
+
+//     auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+
+//     std::cout << "vector sum: " << sum << '\n';
+//     std::cout << "vector time: " << elapsed.count() << " us\n";
+
+// /*     std::cout << "vector size: " << large_vector.size() << '\n';
+//     std::cout << "list size: " << large_list.size() << '\n'; */
+//     auto list_start = std::chrono::steady_clock::now();
+//     long long list_sum = 0;
+
+//     for (int value : large_list) {
+//         list_sum += value;
+//     }
+//     auto list_end = std::chrono::steady_clock::now();
+
+//     auto list_elapsed = std::chrono::duration_cast<std::chrono::microseconds>(list_end - list_start);
+
+//     std::cout << "list sum: " << list_sum << '\n';
+//     std::cout << "list time: " << list_elapsed.count() << " us\n";
+
+std::cout << '\n';
+
+std::vector<int> test_values;
+
+test_values.reserve(20);
+
+std::cout << "size: " << test_values.size() << " capacity: " << test_values.capacity() << '\n';
+
+test_values.resize(50);
+std::cout << "size: " << test_values.size() << " capacity: " << test_values.capacity() << '\n';
+
+// std::size_t previous_capacity = test_values.capacity();
+
+// for (int i = 0; i < 45; ++i) {
+//     test_values.push_back(i);
+//     if (test_values.capacity() != previous_capacity) {
+//         std::cout << "size: " << test_values.size() << " capacity: " << test_values.capacity() << " address: " << test_values.data() << '\n';
+//         previous_capacity = test_values.capacity();
+//     }
+//     std::cout << "final size: " << test_values.size() << '\n';
+//     std::cout << "final capacity: " << test_values.capacity() << '\n';
+// }
+
+std::cout << '\n';
+std::vector<int> v{10, 20, 30};
+
+std::cout << "before: " << v.data() << '\n';
+
+v.reserve(100);
+
+std::cout << "after: " << v.data() << '\n';
+std::cout << "size: " << v.size() << '\n';
+std::cout << "capacity: " << v.capacity() << '\n';
+
+
+}

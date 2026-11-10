@@ -1,0 +1,4 @@
+/home/ruhruh66/cpp_stage4/step48/build/CMakeFiles/calculator.dir
+/home/ruhruh66/cpp_stage4/step48/build/CMakeFiles/app.dir
+/home/ruhruh66/cpp_stage4/step48/build/CMakeFiles/edit_cache.dir
+/home/ruhruh66/cpp_stage4/step48/build/CMakeFiles/rebuild_cache.dir
